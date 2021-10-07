@@ -3,6 +3,7 @@
 export SERVER_IP=$1
 export TARGET_USER=$2
 export SSH_KEY=$3
+export NODE_IP=$4
 
 if [ -z "$SERVER_IP" -o -z "$TARGET_USER" -o -z "$SSH_KEY" ]; then
    echo
@@ -17,7 +18,7 @@ if [ -z "$SERVER_IP" -o -z "$TARGET_USER" -o -z "$SSH_KEY" ]; then
    exit 1
 fi
 
-if [ ! -f $SSH_KEY ]; then'
+if [ ! -f $SSH_KEY ]; then
    echo
    echo "   File does not exist:  $SSH_KEY"
    echo
@@ -28,12 +29,6 @@ echo "   SERVER_IP:   $SERVER_IP"
 echo "   TARGET_USER: $TARGET_USER"
 echo "   SSH_KEY:     $SSH_KEY"
 echo "   NODE_IP:     $NODE_IP"
-
-exit
-#export SERVER_IP=192.168.1.124
-#export NODE_IP=192.168.1.138
-#export TARGET_USER=pi
-#export SSH_KEY=~/.ssh/id_ecdsa
 
 if [ -z $NODE_IP ]; then
    k3sup install --ip $SERVER_IP --user $TARGET_USER --ssh-key $SSH_KEY --local-path ./kubeconfig
