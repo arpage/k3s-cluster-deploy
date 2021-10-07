@@ -4,7 +4,7 @@
 ### If ~/.kube exists, prompt the user to remove or rename it, since we are assuming a new cluster installation,
 ### and we don't want to start out with a confused set of k8s config files.
 ###
-if [ -f  ~/.kube ]; then
+if [ -d  ~/.kube ]; then
    echo
    echo "   It looks like you have some kubectl config files in ~/.kube"
    echo "   Please rename or remove ~/.kube and re-run this file"
