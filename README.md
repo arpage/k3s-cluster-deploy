@@ -9,7 +9,10 @@
     1. Usually the pi user has passwordless sudo access - if not, go ahead and enable that 
         - (you can disable it again after we've install our nodes, if you want to).
 
-    2 . Make sure the following values are set in /boot/cmdline.txt: `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1`
+    2. Check the link below, from rancher.com regarding Raspbian Buster, and iptables.  You may need to run a few commands to modify iptables on your Pi.
+        - https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster
+
+    3. Make sure the following values are set in /boot/cmdline.txt: `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1`
         - Reboot the pi if you have to add the above change.
 
 + Using `k3s-cluster-install.sh` to install k3s on multiple nodes
