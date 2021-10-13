@@ -1,6 +1,6 @@
 # k3s-cluster-deploy - introduction
 
-Hi.  This info has been gathered from multiple sources that I used to get a working, multi-node k3s cluster installed in my own lab environment.
+Hi.  This info has been gathered from multiple sources that I used to get a working, multi-node k3s cluster installed in my own lab environment (see sources section at the end of this document).
 
 IMO, a good way to approach using these scripts is to open a text editor and edit `k3sup-install.sh` and `k3sup-cluster-deploy.sh` side-by-side with this document.
 
