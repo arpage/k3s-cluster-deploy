@@ -66,7 +66,7 @@ This is especially true with `k3sup-cluster-deploy.sh`, as you will need to modi
             1. `/usr/local/bin/k3s-killall.sh`
             2. `/usr/local/bin/k3s-agent-uninstall.sh`
             3. `sudo rm -rf /etc/rancher`
-         - On the main/master node, ssh in and run:
+        - On the main/master node, ssh in and run:
             1. `/usr/local/bin/k3s-killall.sh`
             2. `/usr/local/bin/k3s-uninstall.sh`
             3. `sudo rm -rf /etc/rancher`
