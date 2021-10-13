@@ -60,16 +60,16 @@ This is especially true with `k3sup-cluster-deploy.sh`, as you will need to modi
 + Testing these scripts
     - In order to test these scripts in multiple scenarios, I did the following before each run:
         - On the installation machine, where I'm running the install from:
-            1. rm -rf ~/.kube/
-            2. unset KUBECONFIG
+            1. `rm -rf ~/.kube/`
+            2. `unset KUBECONFIG`
         - On each worker node, ssh in and run:
-            1. /usr/local/bin/k3s-killall.sh
-            2. /usr/local/bin/k3s-agent-uninstall.sh
-            3. sudo rm -rf /etc/rancher
+            1. `/usr/local/bin/k3s-killall.sh`
+            2. `/usr/local/bin/k3s-agent-uninstall.sh`
+            3. `sudo rm -rf /etc/rancher`
          - On the main/master node, ssh in and run:
-            1. /usr/local/bin/k3s-killall.sh
-            2. /usr/local/bin/k3s-uninstall.sh
-            3. sudo rm -rf /etc/rancher
+            1. `/usr/local/bin/k3s-killall.sh`
+            2. `/usr/local/bin/k3s-uninstall.sh`
+            3. `sudo rm -rf /etc/rancher`
             
 + Sources
 
