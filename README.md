@@ -1,4 +1,12 @@
-# K3S Multiple-node Install using k3sup
+# k3s-cluster-deploy - introduction
+
+Hi.  This info has been gathered from multiple sources that I used to get a working, multi-node k3s cluster installed in my own lab environment.
+
+IMO, a good way to approach using these scripts is to open a text editor and edit `k3sup-install.sh` and `k3sup-cluster-deploy.sh` side-by-side with this document.
+
+This is especially true with `k3sup-cluster-deploy.sh`, as you will need to modify at least one of the variables near the top of the script for your specific environment.
+
+# Multiple-node Installs of `k3s`, using `k3sup`
 
 + Installing the `k3sup` remote installation program:
     
@@ -23,7 +31,8 @@
         3. `REMOTE_USER` (this is the user which will be used to install k3s on each remote host
 
     2.  You will need ssh access to each IP address in `remote_hosts` as `REMOTE_USER` from the machine where you are performing this installation.
-        - `k3s-cluster-deploy.sh` will attempt to create/copy a new ecdsa ssh key to be used during the installation process (k3sup seems to not like rsa keys).
+        - **IMPORTANT**: `k3s-cluster-deploy.sh` will attempt to create/copy a new ecdsa ssh key to be used during the installation process 
+            - This is because `k3sup` seems to not like rsa keys, and the installation may fail if rsa keys are used for with `k3sup` during install.
 
     3.  Once you have examined/modified `k3s-cluster-deploy.sh` to suite your site install needs, go ahead and run it in echo mode (e.g. make sure the line `echo=echo` at the top of the script is **NOT** commented out).
         - This should produce the list of commands that will be executed by `k3s-cluster-deploy.sh`
