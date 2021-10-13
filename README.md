@@ -56,3 +56,13 @@ This is especially true with `k3sup-cluster-deploy.sh`, as you will need to modi
     3. If you are planning on installing additional nodes at a later date, take note of the k3s version, which should be shown by the `kubectl get nodes` command.
         - If a new version is released between the original install and the installation of additional nodes, version incompatibilities can cause problems - so it's best to install the same version as the main/master node.
         - Look at the comments for `K3S_VERSION` in the script `k3s-cluster-deploy.sh` for details and limitations.
+
++ Sources
+
+    - https://k3s.io/
+    - https://github.com/alexellis/k3sup
+    - https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster
+    - https://rancher.com/docs/k3s/latest/en/installation/install-options/
+    - https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/
+    
+
