@@ -22,7 +22,7 @@
         2. `MAIN_NODE` (this is the IP address of the node which will be the main/master node)
         3. `REMOTE_USER` (this is the user which will be used to install k3s on each remote host
 
-    2.  You will need ssh access to each IP address in `remote_hosts` as `REMOTE_USER` from the machine where you are peforming this installation.
+    2.  You will need ssh access to each IP address in `remote_hosts` as `REMOTE_USER` from the machine where you are performing this installation.
         - `k3s-cluster-deploy.sh` will attempt to create/copy a new ecdsa ssh key to be used during the installation process (k3sup seems to not like rsa keys).
 
     3.  Once you have examined/modified `k3s-cluster-deploy.sh` to suite your site install needs, go ahead and run it in echo mode (e.g. make sure the line `echo=echo` at the top of the script is **NOT** commented out).
