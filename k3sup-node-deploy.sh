@@ -4,6 +4,7 @@ export SERVER_IP=$1
 export TARGET_USER=$2
 export SSH_KEY=$3
 export NODE_IP=$4
+export K3S_VERSION=$5
 
 if [ -z "$SERVER_IP" -o -z "$TARGET_USER" -o -z "$SSH_KEY" ]; then
    echo
@@ -25,14 +26,18 @@ if [ ! -f $SSH_KEY ]; then
    exit 1
 fi
 
+if [ x$K3S_VERSION != x ]; then
+   export K3SUP_VERSION_ARG="--k3s-version $K3S_VERSION"
+fi
+
 echo "   SERVER_IP:   $SERVER_IP"
 echo "   TARGET_USER: $TARGET_USER"
 echo "   SSH_KEY:     $SSH_KEY"
 echo "   NODE_IP:     $NODE_IP"
 
+$echo echo Running `basename $0`:
 if [ -z $NODE_IP ]; then
-   k3sup install --ip $SERVER_IP --user $TARGET_USER --ssh-key $SSH_KEY --local-path ./kubeconfig
+   $echo k3sup install --ip $SERVER_IP --user $TARGET_USER --ssh-key $SSH_KEY --local-path ./kubeconfig
 else
-   k3sup join --ip $NODE_IP --server-ip $SERVER_IP --user $TARGET_USER --ssh-key $SSH_KEY
+   $echo k3sup join --ip $NODE_IP --server-ip $SERVER_IP --user $TARGET_USER --ssh-key $SSH_KEY $K3SUP_VERSION_ARG
 fi
-
