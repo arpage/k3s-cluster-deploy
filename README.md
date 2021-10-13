@@ -10,7 +10,7 @@ This is especially true with `k3sup-cluster-deploy.sh`, as you will need to modi
 
 + Installing the `k3sup` remote installation program:
     
-    - First, run `sudo ./k3sup-install.sh` to install k3sup locally
+    - First, run `sudo ./k3sup-install.sh` to install k3sup locally (make sure to use sudo, or else `k3sup` may not be properly copied to /usr/local/bin)
 
 + Pre-install Notes for preparing Raspberry Pi nodes, using Raspian:
 
